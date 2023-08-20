@@ -1,7 +1,7 @@
 export class Tweet {
-  private username: string;
-  private avatar: string;
-  private tweet: string;
+  username: string;
+  avatar: string;
+  tweet: string;
 
   constructor(username: string, avatar: string, tweet: string) {
     this.username = username;
