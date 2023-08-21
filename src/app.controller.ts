@@ -4,6 +4,7 @@ import {
   Get,
   HttpCode,
   Param,
+  ParseIntPipe,
   Post,
   Query,
 } from '@nestjs/common';
@@ -32,7 +33,7 @@ export class AppController {
   }
 
   @Get('/tweets')
-  getTweet(@Query('page') page?: number) {
+  getTweet(@Query('page', new ParseIntPipe({ optional: true })) page?: number) {
     return this.appService.getTweets(page);
   }
 
